@@ -19,12 +19,12 @@
 	</div>
 
 	<div>
-		<h3>Queue 1</h3>
+		<h3>Queue 2</h3>
 		<% if (!clients[1].length) { %>
 		<p>No clients yet</p>
 		<% } else { %>
 		<% for (let i = 0; i < clients[1].length; i++) { %>
-		<p><%= `${i+1}.- ${clients[1][i].id}, ${clients[1][i].name}. ${(clients[1][i].endDate.getTime() - Date.now())}` %>
+		<p><%= `${i+1}.- ID: ${clients[0][i].id}, Name:${clients[0][i].name}` %>
 		</p>
 		<% } %>
 		<% } %>

@@ -5,8 +5,7 @@ const Schema = mongoose.Schema;
 const clientSchema = new Schema({
 	id: {
 		type: String,
-		required: true,
-		unique: true,
+		sparse: true,
 	},
 	name: {
 		type: String,

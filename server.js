@@ -28,13 +28,12 @@ app.use(express.urlencoded({ extended: true, }));
 
 //? views and static files
 app.set('view engine', 'ejs');
-app.set('view', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //** ROUTES
-app.get('/', (req, res) => {
-	res.send('hola');
-});
+const queueRoutes = require('./routes/queue');
+app.use('/', queueRoutes);
 
 app.all('*', (req, res, next) => {
 	res.sendStatus(404);
